@@ -34,7 +34,7 @@ class PrizesTable extends Table
         parent::initialize($config);
 
         $this->setTable('prizes');
-        $this->setDisplayField('id');
+        $this->setDisplayField('nazwa');
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Events', [

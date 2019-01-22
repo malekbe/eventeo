@@ -35,7 +35,7 @@ class SpectatorsTable extends Table
         parent::initialize($config);
 
         $this->setTable('spectators');
-        $this->setDisplayField('id');
+        $this->setDisplayField('email');
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Events', [

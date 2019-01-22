@@ -34,7 +34,7 @@ class OrganizatorsTable extends Table
         parent::initialize($config);
 
         $this->setTable('organizators');
-        $this->setDisplayField('id');
+        $this->setDisplayField('email');
         $this->setPrimaryKey('id');
 
         $this->hasMany('Events', [

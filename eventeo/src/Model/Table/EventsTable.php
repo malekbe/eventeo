@@ -39,7 +39,7 @@ class EventsTable extends Table
         parent::initialize($config);
 
         $this->setTable('events');
-        $this->setDisplayField('id');
+        $this->setDisplayField('nazwa');
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
