@@ -7,8 +7,8 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Akcje') ?></li>
-        <li><?= $this->Html->link(__('Edit Spectator'), ['action' => 'edit', $spectator->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Spectator'), ['action' => 'delete', $spectator->id], ['confirm' => __('Jesteś pewien ze chcesz usuąć # {0}?', $spectator->id)]) ?> </li>
+        <li><?= $this->Html->link(__('Edytuj widza'), ['action' => 'edit', $spectator->id]) ?> </li>
+        <li><?= $this->Form->postLink(__('Usuń widza'), ['action' => 'delete', $spectator->id], ['confirm' => __('Jesteś pewien ze chcesz usuąć # {0}?', $spectator->id)]) ?> </li>
         <li><?= $this->Html->link(__('Lista widzów'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('Nowy Widz'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('Lista Wydarzeń'), ['controller' => 'Events', 'action' => 'index']) ?> </li>
@@ -18,7 +18,7 @@
     </ul>
 </nav>
 <div class="spectators view large-9 medium-8 columns content">
-    <h3><?= h($spectator->id) ?></h3>
+    <h3>Widz nr <?= h($spectator->id) ?></h3>
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Email') ?></th>
@@ -29,8 +29,8 @@
             <td><?= h($spectator->nazwa) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Event') ?></th>
-            <td><?= $spectator->has('event') ? $this->Html->link($spectator->event->id, ['controller' => 'Events', 'action' => 'view', $spectator->event->id]) : '' ?></td>
+            <th scope="row"><?= __('Wydarzenie') ?></th>
+            <td><?= $spectator->has('event') ? $this->Html->link($spectator->event->nazwa, ['controller' => 'Events', 'action' => 'view', $spectator->event->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>
@@ -47,7 +47,6 @@
                 <th scope="col"><?= __('Koszt') ?></th>
                 <th scope="col"><?= __('Ilosc') ?></th>
                 <th scope="col"><?= __('Typ') ?></th>
-                <th scope="col"><?= __('Spectator Id') ?></th>
                 <th scope="col" class="actions"><?= __('Akcje') ?></th>
             </tr>
             <?php foreach ($spectator->tickets as $tickets): ?>
@@ -57,7 +56,6 @@
                 <td><?= h($tickets->koszt) ?></td>
                 <td><?= h($tickets->ilosc) ?></td>
                 <td><?= h($tickets->typ) ?></td>
-                <td><?= h($tickets->spectator_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('Widok'), ['controller' => 'Tickets', 'action' => 'view', $tickets->id]) ?>
                     <?= $this->Html->link(__('Edytuj'), ['controller' => 'Tickets', 'action' => 'edit', $tickets->id]) ?>

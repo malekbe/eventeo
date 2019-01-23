@@ -40,7 +40,7 @@
                 <td><?= $this->Number->format($event->id) ?></td>
                 <td><?= h($event->nazwa) ?></td>
                 <td><?= h($event->miejsce) ?></td>
-                <td><?= $event->has('organizator') ? $this->Html->link($event->organizator->id, ['controller' => 'Organizators', 'action' => 'view', $event->organizator->id]) : '' ?></td>
+                <td><?= $event->has('organizator') ? $this->Html->link($event->organizator->email, ['controller' => 'Organizators', 'action' => 'view', $event->organizator->id]) : '' ?></td>
                 <td><?= h($event->date_start) ?></td>
                 <td><?= h($event->date_stop) ?></td>
                 <td><?= h($event->created) ?></td>

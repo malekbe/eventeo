@@ -20,7 +20,7 @@
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('email') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('telefon') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('event_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('event_id', ['label' => 'Wydarzenie']) ?></th>
                 <th scope="col" class="actions"><?= __('Akcje') ?></th>
             </tr>
         </thead>
@@ -30,7 +30,7 @@
                 <td><?= $this->Number->format($participant->id) ?></td>
                 <td><?= h($participant->email) ?></td>
                 <td><?= h($participant->telefon) ?></td>
-                <td><?= $participant->has('event') ? $this->Html->link($participant->event->id, ['controller' => 'Events', 'action' => 'view', $participant->event->id]) : '' ?></td>
+                <td><?= $participant->has('event') ? $this->Html->link($participant->event->nazwa, ['controller' => 'Events', 'action' => 'view', $participant->event->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('Widok'), ['action' => 'view', $participant->id]) ?>
                     <?= $this->Html->link(__('Edytuj'), ['action' => 'edit', $participant->id]) ?>

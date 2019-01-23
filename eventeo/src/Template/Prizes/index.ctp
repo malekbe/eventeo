@@ -20,7 +20,7 @@
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('nazwa') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('wartosc') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('event_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('event_id', ['label' => 'Wydarzenie']) ?></th>
                 <th scope="col" class="actions"><?= __('Akcje') ?></th>
             </tr>
         </thead>
@@ -30,7 +30,7 @@
                 <td><?= $this->Number->format($prize->id) ?></td>
                 <td><?= h($prize->nazwa) ?></td>
                 <td><?= h($prize->wartosc) ?></td>
-                <td><?= $prize->has('event') ? $this->Html->link($prize->event->id, ['controller' => 'Events', 'action' => 'view', $prize->event->id]) : '' ?></td>
+                <td><?= $prize->has('event') ? $this->Html->link($prize->event->nazwa, ['controller' => 'Events', 'action' => 'view', $prize->event->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('Widok'), ['action' => 'view', $prize->id]) ?>
                     <?= $this->Html->link(__('Edytuj'), ['action' => 'edit', $prize->id]) ?>

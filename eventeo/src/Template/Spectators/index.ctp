@@ -22,7 +22,7 @@
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('email') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('nazwa') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('event_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('event_id', ['label' => 'Wydarzenie']) ?></th>
                 <th scope="col" class="actions"><?= __('Akcje') ?></th>
             </tr>
         </thead>
@@ -32,7 +32,7 @@
                 <td><?= $this->Number->format($spectator->id) ?></td>
                 <td><?= h($spectator->email) ?></td>
                 <td><?= h($spectator->nazwa) ?></td>
-                <td><?= $spectator->has('event') ? $this->Html->link($spectator->event->id, ['controller' => 'Events', 'action' => 'view', $spectator->event->id]) : '' ?></td>
+                <td><?= $spectator->has('event') ? $this->Html->link($spectator->event->nazwa, ['controller' => 'Events', 'action' => 'view', $spectator->event->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('Widok'), ['action' => 'view', $spectator->id]) ?>
                     <?= $this->Html->link(__('Edytuj'), ['action' => 'edit', $spectator->id]) ?>

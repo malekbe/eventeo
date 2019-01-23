@@ -27,8 +27,8 @@
             <td><?= h($prize->wartosc) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Event') ?></th>
-            <td><?= $prize->has('event') ? $this->Html->link($prize->event->id, ['controller' => 'Events', 'action' => 'view', $prize->event->id]) : '' ?></td>
+            <th scope="row"><?= __('Wydarzenie') ?></th>
+            <td><?= $prize->has('event') ? $this->Html->link($prize->event->nazwa, ['controller' => 'Events', 'action' => 'view', $prize->event->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>

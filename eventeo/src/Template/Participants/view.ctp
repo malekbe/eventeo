@@ -16,7 +16,7 @@
     </ul>
 </nav>
 <div class="participants view large-9 medium-8 columns content">
-    <h3><?= h($participant->id) ?></h3>
+    <h3>Wydarzenie nr <?= h($participant->id) ?></h3>
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Email') ?></th>
@@ -27,8 +27,8 @@
             <td><?= h($participant->telefon) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Event') ?></th>
-            <td><?= $participant->has('event') ? $this->Html->link($participant->event->id, ['controller' => 'Events', 'action' => 'view', $participant->event->id]) : '' ?></td>
+            <th scope="row"><?= __('Wydarzenie') ?></th>
+            <td><?= $participant->has('event') ? $this->Html->link($participant->event->nazwa, ['controller' => 'Events', 'action' => 'view', $participant->event->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>

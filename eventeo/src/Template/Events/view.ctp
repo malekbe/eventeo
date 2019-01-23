@@ -22,7 +22,7 @@
     </ul>
 </nav>
 <div class="events view large-9 medium-8 columns content">
-    <h3><?= h($event->id) ?></h3>
+    <h3>Wydarzenie nr <?= h($event->id) ?></h3>
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Nazwa') ?></th>
@@ -34,7 +34,7 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Organizator') ?></th>
-            <td><?= $event->has('organizator') ? $this->Html->link($event->organizator->id, ['controller' => 'Organizators', 'action' => 'view', $event->organizator->id]) : '' ?></td>
+            <td><?= $event->has('organizator') ? $this->Html->link($event->organizator->email, ['controller' => 'Organizators', 'action' => 'view', $event->organizator->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>
@@ -69,7 +69,6 @@
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Email') ?></th>
                 <th scope="col"><?= __('Telefon') ?></th>
-                <th scope="col"><?= __('Event Id') ?></th>
                 <th scope="col" class="actions"><?= __('Akcje') ?></th>
             </tr>
             <?php foreach ($event->participants as $participants): ?>
@@ -77,7 +76,6 @@
                 <td><?= h($participants->id) ?></td>
                 <td><?= h($participants->email) ?></td>
                 <td><?= h($participants->telefon) ?></td>
-                <td><?= h($participants->event_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('Widok'), ['controller' => 'Participants', 'action' => 'view', $participants->id]) ?>
                     <?= $this->Html->link(__('Edytuj'), ['controller' => 'Participants', 'action' => 'edit', $participants->id]) ?>
@@ -103,7 +101,6 @@
                 <td><?= h($prizes->id) ?></td>
                 <td><?= h($prizes->nazwa) ?></td>
                 <td><?= h($prizes->wartosc) ?></td>
-                <td><?= h($prizes->event_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('Widok'), ['controller' => 'Prizes', 'action' => 'view', $prizes->id]) ?>
                     <?= $this->Html->link(__('Edytuj'), ['controller' => 'Prizes', 'action' => 'edit', $prizes->id]) ?>
@@ -122,7 +119,6 @@
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Email') ?></th>
                 <th scope="col"><?= __('Nazwa') ?></th>
-                <th scope="col"><?= __('Event Id') ?></th>
                 <th scope="col" class="actions"><?= __('Akcje') ?></th>
             </tr>
             <?php foreach ($event->spectators as $spectators): ?>
@@ -130,7 +126,6 @@
                 <td><?= h($spectators->id) ?></td>
                 <td><?= h($spectators->email) ?></td>
                 <td><?= h($spectators->nazwa) ?></td>
-                <td><?= h($spectators->event_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('Widok'), ['controller' => 'Spectators', 'action' => 'view', $spectators->id]) ?>
                     <?= $this->Html->link(__('Edytuj'), ['controller' => 'Spectators', 'action' => 'edit', $spectators->id]) ?>
