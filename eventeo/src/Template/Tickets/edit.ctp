@@ -27,7 +27,7 @@
             echo $this->Form->control('koszt');
             echo $this->Form->control('ilosc');
             echo $this->Form->control('type', ['label' => 'Typ biletu', 'options' => $types]);
-            echo $this->Form->control('spectator_id', ['options' => $spectators]);
+            echo $this->Form->control('spectator_id', ['label' => 'widz', 'options' => $spectators]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Zapisz')) ?>
