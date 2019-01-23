@@ -55,11 +55,11 @@ class SpectatorsController extends AppController
         if ($this->request->is('post')) {
             $spectator = $this->Spectators->patchEntity($spectator, $this->request->getData());
             if ($this->Spectators->save($spectator)) {
-                $this->Flash->success(__('The spectator has been saved.'));
+                $this->Flash->success(__('Zapisano.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The spectator could not be saved. Please, try again.'));
+            $this->Flash->error(__('Nie zapisano. Spróbuj ponownie.'));
         }
         $events = $this->Spectators->Events->find('list', ['limit' => 200]);
         $this->set(compact('spectator', 'events'));
@@ -80,11 +80,11 @@ class SpectatorsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $spectator = $this->Spectators->patchEntity($spectator, $this->request->getData());
             if ($this->Spectators->save($spectator)) {
-                $this->Flash->success(__('The spectator has been saved.'));
+                $this->Flash->success(__('Zapisano.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The spectator could not be saved. Please, try again.'));
+            $this->Flash->error(__('Nie zapisano. Spróbuj ponownie.'));
         }
         $events = $this->Spectators->Events->find('list', ['limit' => 200]);
         $this->set(compact('spectator', 'events'));
@@ -102,9 +102,9 @@ class SpectatorsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $spectator = $this->Spectators->get($id);
         if ($this->Spectators->delete($spectator)) {
-            $this->Flash->success(__('The spectator has been deleted.'));
+            $this->Flash->success(__('Usunięto.'));
         } else {
-            $this->Flash->error(__('The spectator could not be deleted. Please, try again.'));
+            $this->Flash->error(__('Nie usunięto. Spróbuj ponownie.'));
         }
 
         return $this->redirect(['action' => 'index']);

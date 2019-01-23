@@ -55,11 +55,11 @@ class ParticipantsController extends AppController
         if ($this->request->is('post')) {
             $participant = $this->Participants->patchEntity($participant, $this->request->getData());
             if ($this->Participants->save($participant)) {
-                $this->Flash->success(__('The participant has been saved.'));
+                $this->Flash->success(__('Zapisano.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The participant could not be saved. Please, try again.'));
+            $this->Flash->error(__('Nie zapisano. Spróbuj ponownie.'));
         }
         $events = $this->Participants->Events->find('list', ['limit' => 200]);
         $this->set(compact('participant', 'events'));
@@ -80,11 +80,11 @@ class ParticipantsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $participant = $this->Participants->patchEntity($participant, $this->request->getData());
             if ($this->Participants->save($participant)) {
-                $this->Flash->success(__('The participant has been saved.'));
+                $this->Flash->success(__('Zapisano.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The participant could not be saved. Please, try again.'));
+            $this->Flash->error(__('Nie zapisano. Spróbuj ponownie.'));
         }
         $events = $this->Participants->Events->find('list', ['limit' => 200]);
         $this->set(compact('participant', 'events'));
@@ -102,9 +102,9 @@ class ParticipantsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $participant = $this->Participants->get($id);
         if ($this->Participants->delete($participant)) {
-            $this->Flash->success(__('The participant has been deleted.'));
+            $this->Flash->success(__('Usunięto.'));
         } else {
-            $this->Flash->error(__('The participant could not be deleted. Please, try again.'));
+            $this->Flash->error(__('Nie usunięto. Spróbuj ponownie.'));
         }
 
         return $this->redirect(['action' => 'index']);

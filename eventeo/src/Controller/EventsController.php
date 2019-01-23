@@ -55,11 +55,11 @@ class EventsController extends AppController
         if ($this->request->is('post')) {
             $event = $this->Events->patchEntity($event, $this->request->getData());
             if ($this->Events->save($event)) {
-                $this->Flash->success(__('The event has been saved.'));
+                $this->Flash->success(__('Zapisano.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The event could not be saved. Please, try again.'));
+            $this->Flash->error(__('Nie zapisano. Spróbuj ponownie.'));
         }
         $organizators = $this->Events->Organizators->find('list', ['limit' => 200]);
         $this->set(compact('event', 'organizators'));
@@ -80,11 +80,11 @@ class EventsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $event = $this->Events->patchEntity($event, $this->request->getData());
             if ($this->Events->save($event)) {
-                $this->Flash->success(__('The event has been saved.'));
+                $this->Flash->success(__('Zapisano.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The event could not be saved. Please, try again.'));
+            $this->Flash->error(__('Nie zapisano. Spróbuj ponownie.'));
         }
         $organizators = $this->Events->Organizators->find('list', ['limit' => 200]);
         $this->set(compact('event', 'organizators'));
@@ -102,9 +102,9 @@ class EventsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $event = $this->Events->get($id);
         if ($this->Events->delete($event)) {
-            $this->Flash->success(__('The event has been deleted.'));
+            $this->Flash->success(__('Usunięto.'));
         } else {
-            $this->Flash->error(__('The event could not be deleted. Please, try again.'));
+            $this->Flash->error(__('Nie usunięto. Spróbuj ponownie.'));
         }
 
         return $this->redirect(['action' => 'index']);

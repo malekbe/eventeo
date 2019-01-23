@@ -64,11 +64,11 @@ class TicketsController extends AppController
         if ($this->request->is('post')) {
             $ticket = $this->Tickets->patchEntity($ticket, $this->request->getData());
             if ($this->Tickets->save($ticket)) {
-                $this->Flash->success(__('The ticket has been saved.'));
+                $this->Flash->success(__('Zapisano.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The ticket could not be saved. Please, try again.'));
+            $this->Flash->error(__('Nie zapisano. Spróbuj ponownie.'));
         }
         $spectators = $this->Tickets->Spectators->find('list', ['limit' => 200]);
         $this->set(compact('ticket', 'spectators'));
@@ -89,11 +89,11 @@ class TicketsController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $ticket = $this->Tickets->patchEntity($ticket, $this->request->getData());
             if ($this->Tickets->save($ticket)) {
-                $this->Flash->success(__('The ticket has been saved.'));
+                $this->Flash->success(__('Zapisano.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The ticket could not be saved. Please, try again.'));
+            $this->Flash->error(__('Nie zapisano. Spróbuj ponownie.'));
         }
         $spectators = $this->Tickets->Spectators->find('list', ['limit' => 200]);
         $this->set(compact('ticket', 'spectators'));
@@ -111,9 +111,9 @@ class TicketsController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $ticket = $this->Tickets->get($id);
         if ($this->Tickets->delete($ticket)) {
-            $this->Flash->success(__('The ticket has been deleted.'));
+            $this->Flash->success(__('Usunięto.'));
         } else {
-            $this->Flash->error(__('The ticket could not be deleted. Please, try again.'));
+            $this->Flash->error(__('Nie usunięto. Spróbuj ponownie.'));
         }
 
         return $this->redirect(['action' => 'index']);
