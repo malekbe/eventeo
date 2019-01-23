@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
 
 /**
  * Tickets Controller
@@ -12,6 +13,14 @@ use App\Controller\AppController;
  */
 class TicketsController extends AppController
 {
+    public function beforeFilter(Event $event) {
+        parent::beforeFilter($event);
+        $types = [
+            1 => 'Zwykły',
+            2 => 'Ulgowy'
+        ];
+        $this->set('types', $types);
+    }
 
     /**
      * Index method

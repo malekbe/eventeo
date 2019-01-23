@@ -33,8 +33,8 @@
                 <td><?= $this->Number->format($ticket->cena) ?></td>
                 <td><?= $this->Number->format($ticket->koszt) ?></td>
                 <td><?= $this->Number->format($ticket->ilosc) ?></td>
-                <td><?= $this->Number->format($ticket->typ) ?></td>
-                <td><?= $ticket->has('spectator') ? $this->Html->link($ticket->spectator->id, ['controller' => 'Spectators', 'action' => 'view', $ticket->spectator->id]) : '' ?></td>
+                <td><?= $types[$ticket->typ] ?></td>
+                <td><?= $ticket->has('spectator') ? $this->Html->link($ticket->spectator->email, ['controller' => 'Spectators', 'action' => 'view', $ticket->spectator->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('Widok'), ['action' => 'view', $ticket->id]) ?>
                     <?= $this->Html->link(__('Edytuj'), ['action' => 'edit', $ticket->id]) ?>

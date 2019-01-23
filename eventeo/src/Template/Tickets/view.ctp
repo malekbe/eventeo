@@ -16,11 +16,11 @@
     </ul>
 </nav>
 <div class="tickets view large-9 medium-8 columns content">
-    <h3><?= h($ticket->id) ?></h3>
+    <h3>Bilet nr <?= h($ticket->id) ?></h3>
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Widz') ?></th>
-            <td><?= $ticket->has('spectator') ? $this->Html->link($ticket->spectator->id, ['controller' => 'Spectators', 'action' => 'view', $ticket->spectator->id]) : '' ?></td>
+            <td><?= $ticket->has('spectator') ? $this->Html->link($ticket->spectator->email, ['controller' => 'Spectators', 'action' => 'view', $ticket->spectator->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>
@@ -40,7 +40,7 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Typ') ?></th>
-            <td><?= $this->Number->format($ticket->typ) ?></td>
+            <td><?= $types[$ticket->typ] ?></td>
         </tr>
     </table>
 </div>
