@@ -46,6 +46,16 @@ class AppController extends Controller
         ]);
         $this->loadComponent('Flash');
 
+        $session = $this->getRequest()->getSession();
+        $this->set('role', $session->check('role') ? $session->read('role') : 0);
+
+        $this->set('roles', [
+            0 => 'Niezalogowany',
+            1 => 'Organizator',
+            2 => 'Uczestnik',
+            3 => 'Widz'
+        ]);
+
         /*
          * Enable the following component for recommended CakePHP security settings.
          * see https://book.cakephp.org/3.0/en/controllers/components/security.html

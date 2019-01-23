@@ -109,4 +109,20 @@ class EventsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function login($role = 1) {
+        $this->autoRender = false;
+        $session = $this->getRequest()->getSession();
+        $session->write('role', $role);
+        $this->Flash->success(__('Zalogowano.'));
+        return $this->redirect(['controller' => 'events', 'action' => 'index']);
+    }
+
+    public function logout() {
+        $this->autoRender = false;
+        $session = $this->getRequest()->getSession();
+        $session->destroy();
+        $this->Flash->success(__('Wylogowano.'));
+        return $this->redirect('/');
+    }
 }

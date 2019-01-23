@@ -20,14 +20,6 @@ use Cake\Error\Debugger;
 use Cake\Http\Exception\NotFoundException;
 
 $this->layout = false;
-
-if (!Configure::read('debug')) :
-    throw new NotFoundException(
-        'Please replace src/Template/Pages/home.ctp with your own version or re-enable debug mode.'
-    );
-endif;
-
-$cakeDescription = 'CakePHP: the rapid development PHP framework';
 ?>
 <!DOCTYPE html>
 <html>
@@ -62,19 +54,14 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
             </ul>
         </div>
     </nav>
+    <?= $this->Flash->render() ?>
     <div class="container clearfix">
         <nav class="large-3 medium-4 columns" id="actions-sidebar">
             <ul class="side-nav">
                 <li class="heading"><?= __('Akcje') ?></li>
-                <li><?= $this->Html->link(__('Lista wydarzeń'), ['controller' => 'Events', 'action' => 'index']) ?></li>
-                <li><?= $this->Html->link(__('Lista Organizatorów'), ['controller' => 'Organizators', 'action' => 'index']) ?></li>
-                <li><?= $this->Html->link(__('Dodaj Organizatora'), ['controller' => 'Organizators', 'action' => 'add']) ?></li>
-                <li><?= $this->Html->link(__('Lista Uczestników'), ['controller' => 'Participants', 'action' => 'index']) ?></li>
-                <li><?= $this->Html->link(__('Dodaj Uczestnika'), ['controller' => 'Participants', 'action' => 'add']) ?></li>
-                <li><?= $this->Html->link(__('Lista Nagród'), ['controller' => 'Prizes', 'action' => 'index']) ?></li>
-                <li><?= $this->Html->link(__('Dodaj nagrodę'), ['controller' => 'Prizes', 'action' => 'add']) ?></li>
-                <li><?= $this->Html->link(__('Widzowie'), ['controller' => 'Spectators', 'action' => 'index']) ?></li>
-                <li><?= $this->Html->link(__('Dodaj Widza'), ['controller' => 'Spectators', 'action' => 'add']) ?></li>
+                <li><?= $this->Html->link(__('Zaloguj jako widz'), ['controller' => 'events', 'action' => 'login', 3]) ?></li>
+                <li><?= $this->Html->link(__('Zaloguj jako uczestnik'), ['controller' => 'events', 'action' => 'login', 2]) ?></li>
+                <li><?= $this->Html->link(__('Zaloguj jako organizator'), ['controller' => 'events', 'action' => 'login', 1]) ?></li>
             </ul>
         </nav>
         <div class="events form large-9 medium-8 columns content">

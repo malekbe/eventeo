@@ -24,7 +24,13 @@
         </ul>
         <div class="top-bar-section">
             <ul class="right">
+                <?php if ($role != NIEZALOGOWANY): ?>
+                    <li><a href="javascript:void(0)">Zalogowany jako <?= $roles[$role] ?></a></li>
+                <?php endif; ?>
                 <li><a target="_blank" href="https://github.com/malekbe/eventeo">GitHub</a></li>
+                <?php if ($role != NIEZALOGOWANY): ?>
+                    <li><a href="<?= $this->Url->build(['controller' => 'events', 'action' => 'logout']) ?>">Wyloguj</a></li>
+                <?php endif; ?>
             </ul>
         </div>
     </nav>
