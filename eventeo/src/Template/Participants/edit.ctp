@@ -8,26 +8,26 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Akcje') ?></li>
         <li><?= $this->Form->postLink(
-                __('Delete'),
+                __('Usuń'),
                 ['action' => 'delete', $participant->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $participant->id)]
+                ['confirm' => __('Jesteś pewien ze chcesz usuąć # {0}?', $participant->id)]
             )
         ?></li>
         <li><?= $this->Html->link(__('Lista Uczestników'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Events'), ['controller' => 'Events', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Lista Wydarzeń'), ['controller' => 'Events', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('Nowe Wydarzenie'), ['controller' => 'Events', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="participants form large-9 medium-8 columns content">
     <?= $this->Form->create($participant) ?>
     <fieldset>
-        <legend><?= __('Edit Participant') ?></legend>
+        <legend><?= __('Edytuj uczestnika') ?></legend>
         <?php
             echo $this->Form->control('email');
             echo $this->Form->control('telefon');
             echo $this->Form->control('event_id', ['options' => $events]);
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Zapisz')) ?>
     <?= $this->Form->end() ?>
 </div>

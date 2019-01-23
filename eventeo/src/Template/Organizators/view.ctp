@@ -7,11 +7,11 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Akcje') ?></li>
-        <li><?= $this->Html->link(__('Edit Organizator'), ['action' => 'edit', $organizator->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Organizator'), ['action' => 'delete', $organizator->id], ['confirm' => __('Are you sure you want to delete # {0}?', $organizator->id)]) ?> </li>
+        <li><?= $this->Html->link(__('Edytuj organizatora'), ['action' => 'edit', $organizator->id]) ?> </li>
+        <li><?= $this->Form->postLink(__('Usuń organizatora'), ['action' => 'delete', $organizator->id], ['confirm' => __('Jesteś pewien ze chcesz usuąć # {0}?', $organizator->id)]) ?> </li>
         <li><?= $this->Html->link(__('Lista Organizatorów'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('Nowy Organizator'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Events'), ['controller' => 'Events', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Lista Wydarzeń'), ['controller' => 'Events', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('Nowe Wydarzenie'), ['controller' => 'Events', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
@@ -36,7 +36,7 @@
         <?= $this->Text->autoParagraph(h($organizator->adres)); ?>
     </div>
     <div class="related">
-        <h4><?= __('Related Events') ?></h4>
+        <h4><?= __('Wydarzenia') ?></h4>
         <?php if (!empty($organizator->events)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
@@ -44,11 +44,10 @@
                 <th scope="col"><?= __('Nazwa') ?></th>
                 <th scope="col"><?= __('Miejsce') ?></th>
                 <th scope="col"><?= __('Opis') ?></th>
-                <th scope="col"><?= __('Organizator Id') ?></th>
-                <th scope="col"><?= __('Date Start') ?></th>
-                <th scope="col"><?= __('Date Stop') ?></th>
-                <th scope="col"><?= __('Created') ?></th>
-                <th scope="col"><?= __('Modified') ?></th>
+                <th scope="col"><?= __('Data zakończenia') ?></th>
+                <th scope="col"><?= __('Data rozpoczęcia') ?></th>
+                <th scope="col"><?=__('Utworzono')  ?></th>
+                <th scope="col"><?= __('Edytowano')  ?></th>
                 <th scope="col" class="actions"><?= __('Akcje') ?></th>
             </tr>
             <?php foreach ($organizator->events as $events): ?>
@@ -57,7 +56,6 @@
                 <td><?= h($events->nazwa) ?></td>
                 <td><?= h($events->miejsce) ?></td>
                 <td><?= h($events->opis) ?></td>
-                <td><?= h($events->organizator_id) ?></td>
                 <td><?= h($events->date_start) ?></td>
                 <td><?= h($events->date_stop) ?></td>
                 <td><?= h($events->created) ?></td>
@@ -65,7 +63,7 @@
                 <td class="actions">
                     <?= $this->Html->link(__('Widok'), ['controller' => 'Events', 'action' => 'view', $events->id]) ?>
                     <?= $this->Html->link(__('Edytuj'), ['controller' => 'Events', 'action' => 'edit', $events->id]) ?>
-                    <?= $this->Form->postLink(__('Usuń'), ['controller' => 'Events', 'action' => 'delete', $events->id], ['confirm' => __('Are you sure you want to delete # {0}?', $events->id)]) ?>
+                    <?= $this->Form->postLink(__('Usuń'), ['controller' => 'Events', 'action' => 'delete', $events->id], ['confirm' => __('Jesteś pewien ze chcesz usuąć # {0}?', $events->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

@@ -8,13 +8,13 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Akcje') ?></li>
         <li><?= $this->Html->link(__('Edit Spectator'), ['action' => 'edit', $spectator->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Spectator'), ['action' => 'delete', $spectator->id], ['confirm' => __('Are you sure you want to delete # {0}?', $spectator->id)]) ?> </li>
+        <li><?= $this->Form->postLink(__('Delete Spectator'), ['action' => 'delete', $spectator->id], ['confirm' => __('Jesteś pewien ze chcesz usuąć # {0}?', $spectator->id)]) ?> </li>
         <li><?= $this->Html->link(__('Lista widzów'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('Nowy Widzz'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Events'), ['controller' => 'Events', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Nowy Widz'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Lista Wydarzeń'), ['controller' => 'Events', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('Nowe Wydarzenie'), ['controller' => 'Events', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Tickets'), ['controller' => 'Tickets', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Ticket'), ['controller' => 'Tickets', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Lista biletów'), ['controller' => 'Tickets', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Dodaj bilet'), ['controller' => 'Tickets', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="spectators view large-9 medium-8 columns content">
@@ -38,7 +38,7 @@
         </tr>
     </table>
     <div class="related">
-        <h4><?= __('Related Tickets') ?></h4>
+        <h4><?= __('Bilety') ?></h4>
         <?php if (!empty($spectator->tickets)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
@@ -61,7 +61,7 @@
                 <td class="actions">
                     <?= $this->Html->link(__('Widok'), ['controller' => 'Tickets', 'action' => 'view', $tickets->id]) ?>
                     <?= $this->Html->link(__('Edytuj'), ['controller' => 'Tickets', 'action' => 'edit', $tickets->id]) ?>
-                    <?= $this->Form->postLink(__('Usuń'), ['controller' => 'Tickets', 'action' => 'delete', $tickets->id], ['confirm' => __('Are you sure you want to delete # {0}?', $tickets->id)]) ?>
+                    <?= $this->Form->postLink(__('Usuń'), ['controller' => 'Tickets', 'action' => 'delete', $tickets->id], ['confirm' => __('Jesteś pewien ze chcesz usuąć # {0}?', $tickets->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

@@ -8,20 +8,20 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Akcje') ?></li>
         <li><?= $this->Form->postLink(
-                __('Delete'),
+                __('Usuń'),
                 ['action' => 'delete', $ticket->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $ticket->id)]
+                ['confirm' => __('Jesteś pewien ze chcesz usuąć # {0}?', $ticket->id)]
             )
         ?></li>
-        <li><?= $this->Html->link(__('List Tickets'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Lista biletów'), ['action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('Lista widzów'), ['controller' => 'Spectators', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('Nowy Widzz'), ['controller' => 'Spectators', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Nowy Widz'), ['controller' => 'Spectators', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="tickets form large-9 medium-8 columns content">
     <?= $this->Form->create($ticket) ?>
     <fieldset>
-        <legend><?= __('Edit Ticket') ?></legend>
+        <legend><?= __('Edytuj bilet') ?></legend>
         <?php
             echo $this->Form->control('cena');
             echo $this->Form->control('koszt');
@@ -30,6 +30,6 @@
             echo $this->Form->control('spectator_id', ['options' => $spectators]);
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Zapisz')) ?>
     <?= $this->Form->end() ?>
 </div>

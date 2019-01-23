@@ -15,11 +15,11 @@
         <li><?= $this->Html->link(__('Lista Nagród'), ['controller' => 'Prizes', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('Dodaj nagrodę'), ['controller' => 'Prizes', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('Lista widzów'), ['controller' => 'Spectators', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('Nowy Widzz'), ['controller' => 'Spectators', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Nowy Widz'), ['controller' => 'Spectators', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="events index large-9 medium-8 columns content">
-    <h3><?= __('Events') ?></h3>
+    <h3><?= __('Wydarzenia') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
@@ -27,10 +27,10 @@
                 <th scope="col"><?= $this->Paginator->sort('nazwa') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('miejsce') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('organizator_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('date_start') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('date_stop') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('date_start', ['label' => 'Data rozpoczęcia']) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('date_stop', ['label' => 'Data zakończenia']) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('created', ['label' => 'Utworzono']) ?></th>
+                <th scope="col"><?= $this->Paginator->sort('modified', ['label' => 'Edytowano']) ?></th>
                 <th scope="col" class="actions"><?= __('Akcje') ?></th>
             </tr>
         </thead>
@@ -48,7 +48,7 @@
                 <td class="actions">
                     <?= $this->Html->link(__('Widok'), ['action' => 'view', $event->id]) ?>
                     <?= $this->Html->link(__('Edytuj'), ['action' => 'edit', $event->id]) ?>
-                    <?= $this->Form->postLink(__('Usuń'), ['action' => 'delete', $event->id], ['confirm' => __('Are you sure you want to delete # {0}?', $event->id)]) ?>
+                    <?= $this->Form->postLink(__('Usuń'), ['action' => 'delete', $event->id], ['confirm' => __('Jesteś pewien ze chcesz usuąć # {0}?', $event->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

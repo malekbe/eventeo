@@ -8,12 +8,12 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Akcje') ?></li>
         <li><?= $this->Html->link(__('Dodaj nagrodę'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Events'), ['controller' => 'Events', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Lista Wydarzeń'), ['controller' => 'Events', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('Nowe Wydarzenie'), ['controller' => 'Events', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="prizes index large-9 medium-8 columns content">
-    <h3><?= __('Prizes') ?></h3>
+    <h3><?= __('Nagrody') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
@@ -34,7 +34,7 @@
                 <td class="actions">
                     <?= $this->Html->link(__('Widok'), ['action' => 'view', $prize->id]) ?>
                     <?= $this->Html->link(__('Edytuj'), ['action' => 'edit', $prize->id]) ?>
-                    <?= $this->Form->postLink(__('Usuń'), ['action' => 'delete', $prize->id], ['confirm' => __('Are you sure you want to delete # {0}?', $prize->id)]) ?>
+                    <?= $this->Form->postLink(__('Usuń'), ['action' => 'delete', $prize->id], ['confirm' => __('Jesteś pewien ze chcesz usuąć # {0}?', $prize->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

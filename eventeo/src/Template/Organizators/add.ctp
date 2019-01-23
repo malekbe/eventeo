@@ -8,20 +8,20 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Akcje') ?></li>
         <li><?= $this->Html->link(__('Lista Organizatorów'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Events'), ['controller' => 'Events', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Lista Wydarzeń'), ['controller' => 'Events', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('Nowe Wydarzenie'), ['controller' => 'Events', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="organizators form large-9 medium-8 columns content">
     <?= $this->Form->create($organizator) ?>
     <fieldset>
-        <legend><?= __('Add Organizator') ?></legend>
+        <legend><?= __('Dodaj organizatora') ?></legend>
         <?php
             echo $this->Form->control('adres');
             echo $this->Form->control('email');
             echo $this->Form->control('telefon');
         ?>
     </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Zapisz')) ?>
     <?= $this->Form->end() ?>
 </div>

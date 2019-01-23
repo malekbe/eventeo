@@ -8,18 +8,18 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Akcje') ?></li>
         <li><?= $this->Html->link(__('Edit Ticket'), ['action' => 'edit', $ticket->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Ticket'), ['action' => 'delete', $ticket->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ticket->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Tickets'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Ticket'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Form->postLink(__('Delete Ticket'), ['action' => 'delete', $ticket->id], ['confirm' => __('Jesteś pewien ze chcesz usuąć # {0}?', $ticket->id)]) ?> </li>
+        <li><?= $this->Html->link(__('Lista biletów'), ['action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Dodaj bilet'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('Lista widzów'), ['controller' => 'Spectators', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('Nowy Widzz'), ['controller' => 'Spectators', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('Nowy Widz'), ['controller' => 'Spectators', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="tickets view large-9 medium-8 columns content">
     <h3><?= h($ticket->id) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('Spectator') ?></th>
+            <th scope="row"><?= __('Widz') ?></th>
             <td><?= $ticket->has('spectator') ? $this->Html->link($ticket->spectator->id, ['controller' => 'Spectators', 'action' => 'view', $ticket->spectator->id]) : '' ?></td>
         </tr>
         <tr>

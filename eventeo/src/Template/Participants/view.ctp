@@ -7,11 +7,11 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Akcje') ?></li>
-        <li><?= $this->Html->link(__('Edit Participant'), ['action' => 'edit', $participant->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Participant'), ['action' => 'delete', $participant->id], ['confirm' => __('Are you sure you want to delete # {0}?', $participant->id)]) ?> </li>
+        <li><?= $this->Html->link(__('Edytuj uczestnika'), ['action' => 'edit', $participant->id]) ?> </li>
+        <li><?= $this->Form->postLink(__('Usuń uczestnika'), ['action' => 'delete', $participant->id], ['confirm' => __('Jesteś pewien ze chcesz usuąć # {0}?', $participant->id)]) ?> </li>
         <li><?= $this->Html->link(__('Lista Uczestników'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('Nowy Uczestnik'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Events'), ['controller' => 'Events', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('Lista Wydarzeń'), ['controller' => 'Events', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('Nowe Wydarzenie'), ['controller' => 'Events', 'action' => 'add']) ?> </li>
     </ul>
 </nav>

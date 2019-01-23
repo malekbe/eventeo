@@ -7,15 +7,15 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Akcje') ?></li>
-        <li><?= $this->Html->link(__('Nowy Widzz'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Events'), ['controller' => 'Events', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nowy Widz'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Lista Wydarzeń'), ['controller' => 'Events', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('Nowe Wydarzenie'), ['controller' => 'Events', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Tickets'), ['controller' => 'Tickets', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Ticket'), ['controller' => 'Tickets', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Lista biletów'), ['controller' => 'Tickets', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Dodaj bilet'), ['controller' => 'Tickets', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="spectators index large-9 medium-8 columns content">
-    <h3><?= __('Spectators') ?></h3>
+    <h3><?= __('Widzowie') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
@@ -36,7 +36,7 @@
                 <td class="actions">
                     <?= $this->Html->link(__('Widok'), ['action' => 'view', $spectator->id]) ?>
                     <?= $this->Html->link(__('Edytuj'), ['action' => 'edit', $spectator->id]) ?>
-                    <?= $this->Form->postLink(__('Usuń'), ['action' => 'delete', $spectator->id], ['confirm' => __('Are you sure you want to delete # {0}?', $spectator->id)]) ?>
+                    <?= $this->Form->postLink(__('Usuń'), ['action' => 'delete', $spectator->id], ['confirm' => __('Jesteś pewien ze chcesz usuąć # {0}?', $spectator->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
