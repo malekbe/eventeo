@@ -6,10 +6,10 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+        <li class="heading"><?= __('Akcje') ?></li>
         <li><?= $this->Html->link(__('New Ticket'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Spectators'), ['controller' => 'Spectators', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Spectator'), ['controller' => 'Spectators', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('Lista widzów'), ['controller' => 'Spectators', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('Nowy Widzz'), ['controller' => 'Spectators', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="tickets index large-9 medium-8 columns content">
@@ -23,7 +23,7 @@
                 <th scope="col"><?= $this->Paginator->sort('ilosc') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('typ') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('spectator_id') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col" class="actions"><?= __('Akcje') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -36,9 +36,9 @@
                 <td><?= $this->Number->format($ticket->typ) ?></td>
                 <td><?= $ticket->has('spectator') ? $this->Html->link($ticket->spectator->id, ['controller' => 'Spectators', 'action' => 'view', $ticket->spectator->id]) : '' ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $ticket->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $ticket->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $ticket->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ticket->id)]) ?>
+                    <?= $this->Html->link(__('Widok'), ['action' => 'view', $ticket->id]) ?>
+                    <?= $this->Html->link(__('Edytuj'), ['action' => 'edit', $ticket->id]) ?>
+                    <?= $this->Form->postLink(__('Usuń'), ['action' => 'delete', $ticket->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ticket->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -46,12 +46,12 @@
     </table>
     <div class="paginator">
         <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+            <?= $this->Paginator->first('<< ' . __('pierwsza')) ?>
+            <?= $this->Paginator->prev('< ' . __('poprzednia')) ?>
             <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
+            <?= $this->Paginator->next(__('następna') . ' >') ?>
+            <?= $this->Paginator->last(__('ostatnia') . ' >>') ?>
         </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
+        <p><?= $this->Paginator->counter(['format' => __('Strona {{page}} z {{pages}}, pokazuje {{current}} wpisów ze wszystkich {{count}}')]) ?></p>
     </div>
 </div>
