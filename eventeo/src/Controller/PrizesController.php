@@ -86,8 +86,9 @@ class PrizesController extends AppController
             }
             $this->Flash->error(__('The prize could not be saved. Please, try again.'));
         }
+        $participants = $this->Prizes->Participants->find('list', ['limit' => 200]);
         $events = $this->Prizes->Events->find('list', ['limit' => 200]);
-        $this->set(compact('prize', 'events'));
+        $this->set(compact('prize', 'events', 'participants'));
     }
 
     /**

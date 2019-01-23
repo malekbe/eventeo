@@ -25,7 +25,8 @@
         <?php
             echo $this->Form->control('nazwa');
             echo $this->Form->control('wartosc');
-            echo $this->Form->control('event_id', ['options' => $events]);
+            echo $this->Form->control('event_id', ['label' => 'Wydarzenie', 'options' => $events]);
+            echo $this->Form->control('participant_id', ['label' => 'Zwyciezca', 'options' => $participants]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

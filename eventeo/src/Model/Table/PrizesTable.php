@@ -41,6 +41,11 @@ class PrizesTable extends Table
             'foreignKey' => 'event_id',
             'joinType' => 'INNER'
         ]);
+
+        $this->belongsTo('Participants', [
+            'foreignKey' => 'participant_id',
+            'joinType' => 'INNER'
+        ]);
     }
 
     /**
