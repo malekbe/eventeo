@@ -6,16 +6,14 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Akcje') ?></li>
-        <li><?= $this->Form->postLink(
+      <?= $this->element('side_menu'); ?>
+      <li><?= $this->Form->postLink(
                 __('Usuń'),
                 ['action' => 'delete', $ticket->id],
                 ['confirm' => __('Jesteś pewien ze chcesz usuąć # {0}?', $ticket->id)]
             )
         ?></li>
         <li><?= $this->Html->link(__('Lista biletów'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('Lista widzów'), ['controller' => 'Spectators', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('Nowy Widz'), ['controller' => 'Spectators', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="tickets form large-9 medium-8 columns content">

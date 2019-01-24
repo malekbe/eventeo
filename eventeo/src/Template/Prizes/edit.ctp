@@ -6,16 +6,14 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Akcje') ?></li>
-        <li><?= $this->Form->postLink(
+      <li class="heading"><?= __('Akcje') ?></li>
+      <?= $this->element('side_menu'); ?>
+      <li><?= $this->Form->postLink(
                 __('Usuń'),
                 ['action' => 'delete', $prize->id],
                 ['confirm' => __('Jesteś pewien ze chcesz usuąć # {0}?', $prize->id)]
             )
         ?></li>
-        <li><?= $this->Html->link(__('Lista Nagród'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('Lista Wydarzeń'), ['controller' => 'Events', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('Nowe Wydarzenie'), ['controller' => 'Events', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="prizes form large-9 medium-8 columns content">

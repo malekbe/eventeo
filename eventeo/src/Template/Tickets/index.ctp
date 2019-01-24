@@ -6,10 +6,8 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Akcje') ?></li>
-        <li><?= $this->Html->link(__('Dodaj bilet'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('Lista widzów'), ['controller' => 'Spectators', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('Nowy Widz'), ['controller' => 'Spectators', 'action' => 'add']) ?></li>
+      <li class="heading"><?= __('Akcje') ?></li>
+      <?= $this->element('side_menu'); ?>
     </ul>
 </nav>
 <div class="tickets index large-9 medium-8 columns content">

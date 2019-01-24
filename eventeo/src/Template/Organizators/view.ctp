@@ -6,13 +6,10 @@
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
-        <li class="heading"><?= __('Akcje') ?></li>
-        <li><?= $this->Html->link(__('Edytuj organizatora'), ['action' => 'edit', $organizator->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Usuń organizatora'), ['action' => 'delete', $organizator->id], ['confirm' => __('Jesteś pewien ze chcesz usuąć # {0}?', $organizator->id)]) ?> </li>
-        <li><?= $this->Html->link(__('Lista Organizatorów'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('Nowy Organizator'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('Lista Wydarzeń'), ['controller' => 'Events', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('Nowe Wydarzenie'), ['controller' => 'Events', 'action' => 'add']) ?> </li>
+      <li class="heading"><?= __('Akcje') ?></li>
+      <?= $this->element('side_menu'); ?>
+      <li><?= $this->Html->link(__('Edytuj organizatora'), ['action' => 'edit', $organizator->id]) ?> </li>
+      <li><?= $this->Form->postLink(__('Usuń organizatora'), ['action' => 'delete', $organizator->id], ['confirm' => __('Jesteś pewien ze chcesz usuąć # {0}?', $organizator->id)]) ?> </li>
     </ul>
 </nav>
 <div class="organizators view large-9 medium-8 columns content">
