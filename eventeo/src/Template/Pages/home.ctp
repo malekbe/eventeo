@@ -27,7 +27,7 @@ $this->layout = false;
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-      Eventeo
+      EWYDARZENIE
     </title>
 
     <?= $this->Html->meta('icon') ?>
@@ -45,12 +45,12 @@ $this->layout = false;
     <nav class="top-bar expanded" data-topbar role="navigation">
         <ul class="title-area large-3 medium-4 columns">
             <li class="name">
-                <h1><a href="<?= $this->Url->build('/') ?>">Eventeo</a></h1>
+                <h1><a href="<?= $this->Url->build('/') ?>">EWYDARZENIE</a></h1>
             </li>
         </ul>
         <div class="top-bar-section">
             <ul class="right">
-                <li><a target="_blank" href="https://github.com/malekbe/eventeo">GitHub</a></li>
+                <!--<li><a target="_blank" href="https://github.com/malekbe/eventeo">GitHub</a></li>-->
             </ul>
         </div>
     </nav>
@@ -65,7 +65,7 @@ $this->layout = false;
             </ul>
         </nav>
         <div class="events form large-9 medium-8 columns content">
-        <h3>Eventeo - projekt systemu ułatwiającego organizację imprez sportowych.</h3>
+        <h3>EWYDARZENIE - projekt systemu ułatwiającego organizację imprez sportowych.</h3>
         <h4>Projekt zrealizowany podczas zajęć Inżynierii Oprogramowania</h4>
         <ul>
             Autorzy projektu:
